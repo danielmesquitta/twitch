@@ -1,9 +1,13 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, Heading } from './styles';
 
 const ComingSoon: React.FC = () => {
-  return <Container />;
+  return (
+    <Container>
+      <Heading>Coming soon...</Heading>
+    </Container>
+  );
 };
 
 export default ComingSoon;
