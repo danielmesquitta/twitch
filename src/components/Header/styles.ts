@@ -6,8 +6,7 @@ export const Container = styled.SafeAreaView`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
-  padding: 14px 14px 0 14px;
+  padding: 14px 14px 0px;
 `;
 
 export const Avatar = styled.TouchableOpacity`
