@@ -1,6 +1,6 @@
 # Twitch App - Interface Clone
 
-An React Native app that lists audiobooks to be played, with a screen where you can control the playback, being able also to run and contol it in background mode.
+Twitch clone app made with react native
 
 ### Technologies
 
