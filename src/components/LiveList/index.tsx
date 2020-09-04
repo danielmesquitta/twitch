@@ -27,7 +27,7 @@ const LiveList: React.FC = () => {
         <Main>
           <Header>
             <Avatar />
-            <Username numberOfLines={1}>rodz_oficial</Username>
+            <Username numberOfLines={1}>rocketseat_oficial</Username>
           </Header>
 
           <Description numberOfLines={1}>Front-end com Next.js</Description>
