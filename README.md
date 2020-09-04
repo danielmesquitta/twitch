@@ -1,7 +1,5 @@
 # Twitch App - Interface Clone
 
-Twitch clone app made with react native
-
 ### Technologies
 
 - [React Native](https://reactnative.dev/)
