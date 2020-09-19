@@ -11,9 +11,14 @@ export const Container = styled.SafeAreaView`
 
 export const Avatar = styled.TouchableOpacity`
   position: relative;
-  background: ${colors.tag};
   width: 32px;
   height: 32px;
+  border-radius: 16px;
+`;
+
+export const ProfilePhoto = styled.Image`
+  width: 100%;
+  height: 100%;
   border-radius: 16px;
 `;
 

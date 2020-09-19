@@ -18,7 +18,7 @@ import {
 
 import streamThumbnail from '~/assets/stream_thumbnail.jpg';
 
-const LiveList: React.FC = () => {
+const LiveListVertical: React.FC = () => {
   const LiveListItem = () => (
     <Container>
       <Thumbnail source={streamThumbnail} />
@@ -56,4 +56,4 @@ const LiveList: React.FC = () => {
   );
 };
 
-export default LiveList;
+export default LiveListVertical;

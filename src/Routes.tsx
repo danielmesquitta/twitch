@@ -9,6 +9,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 const { Navigator, Screen } = createBottomTabNavigator();
 
 import Following from '~/pages/Following';
+import Discover from '~/pages/Discover';
 import ComingSoon from '~/pages/ComingSoon';
 
 import colors from '~/styles/colors';
@@ -54,7 +55,7 @@ const Routes: React.FC = () => {
         />
         <Screen
           name="Discover"
-          component={ComingSoon}
+          component={Discover}
           options={{
             tabBarIcon: ({ size, focused }) => (
               <MaterialCommunityIcons

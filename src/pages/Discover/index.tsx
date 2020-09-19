@@ -6,28 +6,47 @@ import Header from '~/components/Header';
 import Heading from '~/components/Heading';
 import Title from '~/components/Title';
 import CategoriesList from '~/components/CategoriesList';
-import LiveListVertical from '~/components/LiveListVertical';
-import ChannelsList from '~/components/ChannelsList';
+import LiveListHorizontal from '~/components/LiveListHorizontal';
 
 import { IFollowingItem } from '~/@types/interfaces';
 import { FlatList } from 'react-native-gesture-handler';
 
-const Following: React.FC = () => {
+const Discover: React.FC = () => {
   const { followingItems, stickyHeaderIndices } = useMemo(() => {
     const followingItems: IFollowingItem[] = [
-      { render: () => <Heading>Following</Heading> },
+      { render: () => <Heading>Discover</Heading> },
 
-      { render: () => <Title>Followed Categories</Title>, isTitle: true },
+      { render: () => <LiveListHorizontal /> },
+
+      {
+        render: () => <Title>Live Channels We Think You'll Like</Title>,
+        isTitle: true,
+      },
+      { render: () => <LiveListHorizontal /> },
+
+      {
+        render: () => <Title>Categories we think you'll like</Title>,
+        isTitle: true,
+      },
       { render: () => <CategoriesList /> },
 
-      { render: () => <Title>Live Channels</Title>, isTitle: true },
-      { render: () => <LiveListVertical /> },
+      {
+        render: () => <Title>Recommended Just Chatting Channels</Title>,
+        isTitle: true,
+      },
+      { render: () => <LiveListHorizontal /> },
 
-      { render: () => <Title>Continue Watching</Title>, isTitle: true },
-      { render: () => <LiveListVertical /> },
+      {
+        render: () => <Title>All aboard the Hype Train</Title>,
+        isTitle: true,
+      },
+      { render: () => <LiveListHorizontal /> },
 
-      { render: () => <Title>Offline Channels</Title>, isTitle: true },
-      { render: () => <ChannelsList /> },
+      {
+        render: () => <Title>Clips we think you'll like</Title>,
+        isTitle: true,
+      },
+      { render: () => <LiveListHorizontal /> },
     ];
 
     const stickyHeaderIndices: number[] = [];
@@ -58,4 +77,4 @@ const Following: React.FC = () => {
   );
 };
 
-export default Following;
+export default Discover;

@@ -16,7 +16,7 @@ interface ICategoryItemProps {
   item: typeof data[0];
 }
 
-const FollowedCategoriesList: React.FC = () => {
+const CategoriesList: React.FC = () => {
   const CategoryItem: React.FC<ICategoryItemProps> = ({ item }) => (
     <CategoryItemContainer>
       <CategoryItemImage source={item.source} />
@@ -37,4 +37,4 @@ const FollowedCategoriesList: React.FC = () => {
   );
 };
 
-export default FollowedCategoriesList;
+export default CategoriesList;
