@@ -14,33 +14,33 @@ import {
   Tags,
   Tag,
 } from './styles';
-
 import data from './data';
-
 import profilePhoto from '~/assets/profile_photo.png';
 
-const LiveListVertical: React.FC = () => {
-  interface ILiveListItemProps {
-    data: typeof data[0];
-  }
+type IItem = typeof data[0];
 
-  const LiveListItem: React.FC<ILiveListItemProps> = ({ data }) => (
+interface ILiveListItemProps {
+  item: IItem;
+}
+
+const LiveListVertical: React.FC = () => {
+  const LiveListItem: React.FC<ILiveListItemProps> = ({ item }) => (
     <Container>
-      <Thumbnail source={data.source} resizeMode="contain" />
+      <Thumbnail source={item.source} resizeMode="contain" />
 
       <Body>
         <Main>
           <Header>
             <Avatar source={profilePhoto} />
-            <Username numberOfLines={1}>{data.user}</Username>
+            <Username numberOfLines={1}>{item.user}</Username>
           </Header>
 
-          <Description numberOfLines={1}>{data.description}</Description>
+          <Description numberOfLines={1}>{item.description}</Description>
 
-          <Category numberOfLines={1}>{data.category}</Category>
+          <Category numberOfLines={1}>{item.category}</Category>
         </Main>
         <Tags>
-          {data.tags.map(tag => (
+          {item.tags.map(tag => (
             <Tag>{tag}</Tag>
           ))}
         </Tags>
@@ -49,11 +49,11 @@ const LiveListVertical: React.FC = () => {
   );
 
   return (
-    <List horizontal={true}>
-      {data.map((item, index) => (
-        <LiveListItem key={String(index)} data={item} />
-      ))}
-    </List>
+    <List
+      data={data}
+      keyExtractor={(_, index) => String(index)}
+      renderItem={({ item }) => <LiveListItem item={item} />}
+    />
   );
 };
 

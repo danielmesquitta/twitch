@@ -1,8 +1,14 @@
 import styled from 'styled-components/native';
+import { FlatList } from 'react-native';
 
 import colors from '~/styles/colors';
 
-export const List = styled.ScrollView``;
+import data from './data';
+type IItem = typeof data[0];
+
+export const List = styled(FlatList as new () => FlatList<IItem>).attrs({
+  horizontal: true,
+})``;
 
 export const Container = styled.TouchableOpacity`
   flex: 1;

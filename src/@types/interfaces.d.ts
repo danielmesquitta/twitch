@@ -1,4 +1,4 @@
-export interface IFollowingItem {
+export interface IFlatListDataItem {
   render: () => JSX.Element;
   isTitle?: boolean;
 }

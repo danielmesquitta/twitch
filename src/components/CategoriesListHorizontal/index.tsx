@@ -16,7 +16,7 @@ interface ICategoryItemProps {
   item: typeof data[0];
 }
 
-const CategoriesList: React.FC = () => {
+const CategoriesListHorizontal: React.FC = () => {
   const CategoryItem: React.FC<ICategoryItemProps> = ({ item }) => (
     <CategoryItemContainer>
       <CategoryItemImage source={item.source} />
@@ -37,4 +37,4 @@ const CategoriesList: React.FC = () => {
   );
 };
 
-export default CategoriesList;
+export default CategoriesListHorizontal;

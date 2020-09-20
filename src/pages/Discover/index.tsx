@@ -5,15 +5,15 @@ import { Container, Main } from './styles';
 import Header from '~/components/Header';
 import Heading from '~/components/Heading';
 import Title from '~/components/Title';
-import CategoriesList from '~/components/CategoriesList';
+import CategoriesListHorizontal from '~/components/CategoriesListHorizontal';
 import LiveListHorizontal from '~/components/LiveListHorizontal';
 
-import { IFollowingItem } from '~/@types/interfaces';
+import { IFlatListDataItem } from '~/@types/interfaces';
 import { FlatList } from 'react-native-gesture-handler';
 
 const Discover: React.FC = () => {
-  const { followingItems, stickyHeaderIndices } = useMemo(() => {
-    const followingItems: IFollowingItem[] = [
+  const { discoverItems, stickyHeaderIndices } = useMemo(() => {
+    const discoverItems: IFlatListDataItem[] = [
       { render: () => <Heading>Discover</Heading> },
 
       { render: () => <LiveListHorizontal /> },
@@ -28,7 +28,7 @@ const Discover: React.FC = () => {
         render: () => <Title>Categories we think you'll like</Title>,
         isTitle: true,
       },
-      { render: () => <CategoriesList /> },
+      { render: () => <CategoriesListHorizontal /> },
 
       {
         render: () => <Title>Recommended Just Chatting Channels</Title>,
@@ -50,12 +50,12 @@ const Discover: React.FC = () => {
     ];
 
     const stickyHeaderIndices: number[] = [];
-    followingItems.forEach(
+    discoverItems.forEach(
       (item, index) => item.isTitle && stickyHeaderIndices.push(index)
     );
 
     return {
-      followingItems,
+      discoverItems,
       stickyHeaderIndices,
     };
   }, []);
@@ -64,8 +64,8 @@ const Discover: React.FC = () => {
     <Container>
       <Header />
       <Main>
-        <FlatList<IFollowingItem>
-          data={followingItems}
+        <FlatList<IFlatListDataItem>
+          data={discoverItems}
           renderItem={({ item }) => item.render()}
           keyExtractor={(_, index) => String(index)}
           stickyHeaderIndices={stickyHeaderIndices}

@@ -4,10 +4,8 @@ import { Container, Main } from './styles';
 
 import Header from '~/components/Header';
 import Heading from '~/components/Heading';
-import Title from '~/components/Title';
-import CategoriesListHorizontal from '~/components/CategoriesListHorizontal';
-import LiveListVertical from '~/components/LiveListVertical';
-import ChannelsList from '~/components/ChannelsList';
+import Nav from '~/components/Nav';
+import CategoriesListVertical from '~/components/CategoriesListVertical';
 
 import { IFlatListDataItem } from '~/@types/interfaces';
 import { FlatList } from 'react-native-gesture-handler';
@@ -15,19 +13,10 @@ import { FlatList } from 'react-native-gesture-handler';
 const Following: React.FC = () => {
   const { followingItems, stickyHeaderIndices } = useMemo(() => {
     const followingItems: IFlatListDataItem[] = [
-      { render: () => <Heading>Following</Heading> },
+      { render: () => <Heading>Browse</Heading> },
 
-      { render: () => <Title>Followed Categories</Title>, isTitle: true },
-      { render: () => <CategoriesListHorizontal /> },
-
-      { render: () => <Title>Live Channels</Title>, isTitle: true },
-      { render: () => <LiveListVertical /> },
-
-      { render: () => <Title>Continue Watching</Title>, isTitle: true },
-      { render: () => <LiveListVertical /> },
-
-      { render: () => <Title>Offline Channels</Title>, isTitle: true },
-      { render: () => <ChannelsList /> },
+      { render: () => <Nav>Categories</Nav>, isTitle: true },
+      { render: () => <CategoriesListVertical /> },
     ];
 
     const stickyHeaderIndices: number[] = [];

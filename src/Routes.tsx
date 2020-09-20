@@ -10,6 +10,7 @@ const { Navigator, Screen } = createBottomTabNavigator();
 
 import Following from '~/pages/Following';
 import Discover from '~/pages/Discover';
+import Browse from '~/pages/Browse';
 import ComingSoon from '~/pages/ComingSoon';
 
 import colors from '~/styles/colors';
@@ -68,7 +69,7 @@ const Routes: React.FC = () => {
         />
         <Screen
           name="Browse"
-          component={ComingSoon}
+          component={Browse}
           options={{
             tabBarIcon: ({ size, focused }) => (
               <Ionicons
