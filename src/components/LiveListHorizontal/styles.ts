@@ -1,8 +1,6 @@
 import styled from 'styled-components/native';
 import { FlatList } from 'react-native';
 
-import colors from '~/styles/colors';
-
 import data from './data';
 type IItem = typeof data[0];
 
@@ -42,22 +40,22 @@ export const Avatar = styled.Image`
   width: 30px;
   height: 30px;
   border-radius: 15px;
-  background: ${colors.tag};
+  background: ${props => props.theme.tag};
 `;
 
 export const Username = styled.Text`
-  color: ${colors.black};
+  color: ${props => props.theme.black};
   margin-left: 15px;
   width: 80%;
   font-weight: bold;
 `;
 
 export const Description = styled.Text`
-  color: ${colors.black};
+  color: ${props => props.theme.black};
 `;
 
 export const Category = styled.Text`
-  color: ${colors.gray};
+  color: ${props => props.theme.gray};
 `;
 
 export const Tags = styled.View`
@@ -66,8 +64,8 @@ export const Tags = styled.View`
 `;
 
 export const Tag = styled.Text`
-  color: ${colors.black};
-  background: ${colors.tag};
+  color: ${props => props.theme.black};
+  background: ${props => props.theme.tag};
   padding: 2px 8px;
   border-radius: 10px;
   margin-right: 5px;

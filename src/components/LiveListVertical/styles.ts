@@ -1,7 +1,5 @@
 import styled from 'styled-components/native';
 
-import colors from '~/styles/colors';
-
 export const List = styled.View`
   padding: 8px 0 24px;
 `;
@@ -38,21 +36,21 @@ export const Avatar = styled.View`
   width: 20px;
   height: 20px;
   border-radius: 10px;
-  background: ${colors.tag};
+  background: ${props => props.theme.tag};
 `;
 
 export const Username = styled.Text`
-  color: ${colors.black};
+  color: ${props => props.theme.black};
   margin-left: 5px;
   font-weight: bold;
 `;
 
 export const Description = styled.Text`
-  color: ${colors.black};
+  color: ${props => props.theme.black};
 `;
 
 export const Category = styled.Text`
-  color: ${colors.gray};
+  color: ${props => props.theme.gray};
 `;
 
 export const Tags = styled.View`
@@ -61,13 +59,13 @@ export const Tags = styled.View`
 `;
 
 export const TagContainer = styled.View`
-  background: ${colors.tag};
+  background: ${props => props.theme.tag};
   padding: 2px 8px;
   border-radius: 10px;
   margin-right: 5px;
 `;
 
 export const TagText = styled.Text`
-  color: ${colors.black};
+  color: ${props => props.theme.black};
   font-size: 13px;
 `;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Feather from 'react-native-vector-icons/Feather';
@@ -11,10 +12,18 @@ import {
   Icons,
   Button,
 } from './styles';
-import colors from '~/styles/colors';
 import profilePhoto from '~/assets/profile_photo.png';
+import { changeTheme } from '~/store/modules/theme/actions';
+import { ITheme, IStore } from '~/@types/store';
 
 const Header: React.FC = () => {
+  const dispatch = useDispatch();
+  const theme = useSelector<IStore, ITheme>(state => state.theme);
+
+  function changeThemeColor() {
+    dispatch(changeTheme(theme.type === 'light' ? 'dark' : 'light'));
+  }
+
   return (
     <Container>
       <Avatar>
@@ -23,11 +32,19 @@ const Header: React.FC = () => {
       </Avatar>
 
       <Icons>
+        <Button onPress={changeThemeColor}>
+          <Feather
+            name={theme.type === 'light' ? 'sun' : 'moon'}
+            size={26}
+            color={theme.purple}
+          />
+        </Button>
+
         <Button>
           <MaterialIcons
             name="notifications-none"
             size={26}
-            color={colors.black}
+            color={theme.black}
           />
         </Button>
 
@@ -35,12 +52,12 @@ const Header: React.FC = () => {
           <MaterialCommunityIcons
             name="message-outline"
             size={26}
-            color={colors.black}
+            color={theme.black}
           />
         </Button>
 
         <Button>
-          <Feather name="search" size={26} color={colors.black} />
+          <Feather name="search" size={26} color={theme.black} />
         </Button>
       </Icons>
     </Container>

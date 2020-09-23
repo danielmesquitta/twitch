@@ -1,7 +1,5 @@
 import styled from 'styled-components/native';
 
-import colors from '~/styles/colors';
-
 export const Container = styled.SafeAreaView`
   flex-direction: row;
   align-items: center;
@@ -26,11 +24,11 @@ export const OnlineStatus = styled.View`
   position: absolute;
   bottom: 0;
   right: 0;
-  background: ${colors.green};
+  background: ${props => props.theme.green};
   width: 10px;
   height: 10px;
   border-radius: 10px;
-  border: 2px solid ${colors.primary};
+  border: 2px solid ${props => props.theme.primary};
 `;
 
 export const Icons = styled.View`

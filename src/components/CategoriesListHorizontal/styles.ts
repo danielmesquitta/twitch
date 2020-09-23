@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import colors from '~/styles/colors';
 
 export const Container = styled.ScrollView.attrs({
   horizontal: true,
@@ -19,7 +18,7 @@ export const CategoryItemImage = styled.Image`
 `;
 
 export const CategoryItemName = styled.Text`
-  color: ${colors.black};
+  color: ${props => props.theme.black};
   margin-top: 5px;
   max-width: 100%;
   font-weight: bold;
@@ -32,14 +31,14 @@ export const CategoryItemStatus = styled.View`
 `;
 
 export const RedCircle = styled.View`
-  background: ${colors.red};
+  background: ${props => props.theme.red};
   width: 9px;
   height: 9px;
   border-radius: 4.5px;
 `;
 
 export const CategoryItemInfo = styled.Text`
-  color: ${colors.gray};
+  color: ${props => props.theme.gray};
   margin-left: 4px;
   padding-bottom: 1px;
 `;

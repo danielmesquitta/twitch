@@ -1,6 +1,5 @@
 import styled from 'styled-components/native';
 
-import colors from '~/styles/colors';
 import Background from '~/styles/Background';
 
 export const Container = styled(Background)`
@@ -9,6 +8,6 @@ export const Container = styled(Background)`
 `;
 
 export const Heading = styled.Text`
-  color: ${colors.purple};
+  color: ${props => props.theme.purple};
   font-size: 30px;
 `;

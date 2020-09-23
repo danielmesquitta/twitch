@@ -1,9 +1,8 @@
 import styled from 'styled-components/native';
-import colors from '~/styles/colors';
 
 export const Container = styled.Text`
-  color: ${colors.gray};
-  background: ${colors.primary};
+  color: ${props => props.theme.gray};
+  background: ${props => props.theme.primary};
   font-weight: bold;
   font-size: 14px;
   text-transform: uppercase;
