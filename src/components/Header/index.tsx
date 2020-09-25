@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Feather from 'react-native-vector-icons/Feather';
+import Slider from '@react-native-community/slider';
 
 import {
   Container,
@@ -11,6 +12,7 @@ import {
   OnlineStatus,
   Icons,
   Button,
+  ThemeSlider,
 } from './styles';
 import profilePhoto from '~/assets/profile_photo.png';
 import { changeTheme } from '~/store/modules/theme/actions';
@@ -20,7 +22,9 @@ const Header: React.FC = () => {
   const dispatch = useDispatch();
   const theme = useSelector<IStore, ITheme>(state => state.theme);
 
-  function changeThemeColor() {
+  const sliderRef = useRef<Slider>(null);
+
+  function handleToggleTheme() {
     dispatch(changeTheme(theme.type === 'light' ? 'dark' : 'light'));
   }
 
@@ -32,11 +36,23 @@ const Header: React.FC = () => {
       </Avatar>
 
       <Icons>
-        <Button onPress={changeThemeColor}>
+        <Button onPress={handleToggleTheme}>
+          <Feather name="sun" size={26} color={theme.black} />
+          <ThemeSlider
+            minimumValue={0}
+            maximumValue={1}
+            value={theme.type === 'light' ? 0 : 1}
+            minimumTrackTintColor={theme.black}
+            maximumTrackTintColor={theme.purple}
+            thumbTintColor={theme.type === 'light' ? theme.gray : theme.purple}
+            ref={sliderRef}
+            step={1}
+            disabled
+          />
           <Feather
-            name={theme.type === 'light' ? 'sun' : 'moon'}
+            name="moon"
             size={26}
-            color={theme.purple}
+            color={theme.type === 'dark' ? theme.purple : theme.black}
           />
         </Button>
 

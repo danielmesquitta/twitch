@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import Slider from '@react-native-community/slider';
 
 export const Container = styled.SafeAreaView`
   flex-direction: row;
@@ -38,4 +39,10 @@ export const Icons = styled.View`
 
 export const Button = styled.TouchableOpacity`
   margin-left: 20px;
+  flex-direction: row;
+`;
+
+export const ThemeSlider = styled(Slider)`
+  width: 50px;
+  transform: scale(1.5);
 `;
