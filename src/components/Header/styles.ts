@@ -44,5 +44,5 @@ export const Button = styled.TouchableOpacity`
 
 export const ThemeSlider = styled(Slider)`
   width: 50px;
-  transform: scale(1.5);
+  transform: scaleX(1.5) scaleY(1.5);
 `;
